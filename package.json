@@ -1,7 +1,7 @@
 {
-  "name": "purescript-concur-starter",
-  "version": "0.1.0",
-  "description": "A Starter kit for Purescript-Concur. Uses Spago and Parcel.",
+  "name": "concur-trial",
+  "version": "0.0.1",
+  "description": "A trial project for Purescript-Concur. Uses Spago and Parcel.",
   "main": "index.js",
   "scripts": {
     "test": "spago test",
@@ -12,14 +12,14 @@
     "start": "spago build && parcel index.html",
     "watch": "spago build && parcel watch index.html"
   },
-  "author": "Anupam Jain <ajnsit@gmail.com> (https://github.com/ajnsit)",
+  "author": "Murat Özsöyler <murat.ozsoyler@gmail.com> (https://github.com/MuratOzsoyler)",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.1",
     "parcel-bundler": "^1.12.4",
-    "purescript": "^0.13.6",
+    "purescript": "^0.13.8",
     "rimraf": "^3.0.2",
-    "spago": "^0.15.2"
+    "spago": "^0.17.0"
   },
   "dependencies": {
     "react": "^16.13.1",
