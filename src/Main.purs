@@ -1,6 +1,8 @@
 module Main where
 
 import Prelude
+import Control.Alternative ((<|>))
+import Effect (Effect)
 
 import Concur.Core (Widget)
 import Concur.Core.FRP (Signal)
@@ -9,10 +11,6 @@ import Concur.React (HTML)
 import Concur.React.DOM as D
 import Concur.React.Props as P
 import Concur.React.Run (runWidgetInDom)
-import Control.Alternative ((<|>))
-
-import Effect (Effect)
-
 
 -- hello :: forall a. Widget HTML a
 -- hello = do
@@ -83,8 +81,9 @@ formSignal form = F.step form do
 
 page :: forall a. Widget HTML a
 page = F.dyn $ F.loopS initialForm \form -> do 
-    F.display $ D.text (show form) <|> D.hr' 
-    formSignal form
+    form' <- formSignal form
+    F.display $ D.hr' <|> D.text (show form') <|> D.hr'
+    pure form'
   where
     initialForm = {name: "", rememberMe: false}
 main :: Effect Unit
